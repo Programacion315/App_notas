@@ -27,6 +27,7 @@ function guardarNota(e){
     }
        
     dameNota();
+    document.getElementById('formulario').reset();
     e.preventDefault();
 
 
@@ -60,7 +61,19 @@ function dameNota(){
 
 function eliminarTarea(titulo){
 
-    
+    let notas = JSON.parse(localStorage.getItem('notas'));
+
+    for(let i = 0; i < notas.length; i++){
+
+        if(notas[i].titulo == titulo){
+
+            notas.splice(i, 1);
+        }
+    }
+
+    localStorage.setItem('notas', JSON.stringify(notas));
+
+    dameNota()    
 }
 
 dameNota();
