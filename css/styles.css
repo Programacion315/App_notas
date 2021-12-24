@@ -8,3 +8,12 @@ body{
 #tituloNav{
     font-size: 50px;
 }
+
+/*Cambia el color a blanco en lugar de verde en los 710*/
+
+@media screen and (max-width: 710) {
+
+    body{
+        background-color: green;
+    }
+}
